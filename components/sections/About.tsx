@@ -4,7 +4,7 @@ import { WordLight } from "./WordLight";
 
 const STATS = [
   { Icon: Robot, value: 25, suffix: "+", label: "AI agent & automation projects" },
-  { Icon: GlobeHemisphereEast, value: 5, label: "Countries served" },
+  { Icon: GlobeHemisphereEast, value: 7, label: "Countries served" },
   { Icon: Trophy, value: 1, prefix: "#", label: "of 12 universities, national software engineering competition" },
   { Icon: RocketLaunch, value: 2026, from: 2020, label: "Founded REVELA AI" },
 ];

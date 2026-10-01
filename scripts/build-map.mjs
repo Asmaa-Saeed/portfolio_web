@@ -9,14 +9,16 @@ const require = createRequire(import.meta.url);
 const world = require("world-atlas/countries-50m.json");
 const countries = feature(world, world.objects.countries).features;
 
-const REGION = { lonMin: -14, lonMax: 54, latMin: 12, latMax: 46 };
+const REGION = { lonMin: -14, lonMax: 60, latMin: 12, latMax: 46 };
 const STEP = 0.9;
 const WIDTH = 1000;
 const kx = Math.cos((30 * Math.PI) / 180);
 const scale = WIDTH / ((REGION.lonMax - REGION.lonMin) * kx);
 const HEIGHT = Math.round((REGION.latMax - REGION.latMin) * scale);
 
-const CLIENT_IDS = { "012": "DZ", "275": "PS", "792": "TR", "760": "SY", "818": "EG" };
+const CLIENT_IDS = {
+  "012": "DZ", "275": "PS", "792": "TR", "760": "SY", "818": "EG", "682": "SA", "784": "AE",
+};
 
 const project = (lon, lat) => [
   +((lon - REGION.lonMin) * kx * scale).toFixed(1),
@@ -53,6 +55,8 @@ const markers = [
   { code: "PS", name: "Palestine", city: "Ramallah", lon: 35.2, lat: 31.9 },
   { code: "SY", name: "Syria", city: "Damascus", lon: 36.29, lat: 33.51 },
   { code: "TR", name: "Türkiye", city: "Ankara", lon: 32.86, lat: 39.93 },
+  { code: "SA", name: "Saudi Arabia", city: "Riyadh", lon: 46.72, lat: 24.69 },
+  { code: "AE", name: "UAE", city: "Abu Dhabi", lon: 54.37, lat: 24.45 },
 ].map(({ lon, lat, ...m }) => {
   const [x, y] = project(lon, lat);
   return { ...m, x, y };

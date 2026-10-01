@@ -8,11 +8,13 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 const HOME = MAP_MARKERS.find((m) => m.code === "EG")!;
 const TARGETS = MAP_MARKERS.filter((m) => m.code !== "EG");
 
-// Egypt, Palestine and Syria sit close together, so their labels fan out.
+// Neighbouring pins sit close together, so their labels fan out.
 const LABEL_POS: Record<string, { dx: number; dy: number; anchor: "start" | "end" | "middle" }> = {
   EG: { dx: -14, dy: 24, anchor: "end" },
   PS: { dx: 14, dy: 22, anchor: "start" },
   SY: { dx: 14, dy: -6, anchor: "start" },
+  SA: { dx: -14, dy: 5, anchor: "end" },
+  AE: { dx: 0, dy: 28, anchor: "middle" },
 };
 
 /** Curved arc from Egypt to a client, bowed upward relative to its length. */
@@ -64,7 +66,7 @@ export function ClientsMap() {
         viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
         className="h-auto w-full"
         role="img"
-        aria-label="Map of client countries: Algeria, Palestine, Türkiye and Syria, connected by arcs to Egypt."
+        aria-label="Map of client countries: Algeria, Palestine, Türkiye, Syria, Saudi Arabia and the UAE, connected by arcs to Egypt."
       >
         <defs>
           <linearGradient id="arc-grad" x1="0" y1="0" x2="1" y2="0">

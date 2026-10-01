@@ -10,8 +10,8 @@ export function Clients() {
           <div>
             <SectionHeading
               id="clients-title"
-              title="Clients across five countries"
-              description="Built from Egypt for teams in North Africa and the Middle East, where AI has to work in Arabic and English and earn trust fast."
+              title="Clients across seven countries"
+              description="Built from Egypt for teams across North Africa, the Levant and the Gulf, where AI has to work in Arabic and English and earn trust fast."
             />
             <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-1">
               {MAP_MARKERS.map((m) => (
