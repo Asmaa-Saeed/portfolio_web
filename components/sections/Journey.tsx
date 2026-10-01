@@ -50,17 +50,20 @@ export function Journey() {
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
+      const root = ref.current;
+      const timeline = root?.querySelector("[data-timeline]");
+      const progress = root?.querySelector("[data-progress]");
+      if (!root || !timeline || !progress || prefersReducedMotion()) return;
       gsap.fromTo(
-        "[data-progress]",
+        progress,
         { scaleY: 0 },
         {
           scaleY: 1,
           ease: "none",
-          scrollTrigger: { trigger: "[data-timeline]", start: "top 70%", end: "bottom 60%", scrub: true },
+          scrollTrigger: { trigger: timeline, start: "top 70%", end: "bottom 60%", scrub: true },
         },
       );
-      gsap.utils.toArray<HTMLElement>("[data-entry]").forEach((el) => {
+      root.querySelectorAll<HTMLElement>("[data-entry]").forEach((el) => {
         gsap.from(el, {
           x: 24,
           opacity: 0,
@@ -70,7 +73,7 @@ export function Journey() {
         });
       });
     },
-    { scope: ref },
+    [],
   );
 
   return (
