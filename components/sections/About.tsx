@@ -1,12 +1,23 @@
-import { Robot, GlobeHemisphereEast, Trophy, RocketLaunch } from "@phosphor-icons/react/dist/ssr";
+import { Robot, GlobeHemisphereEast, GraduationCap, Trophy, RocketLaunch } from "@phosphor-icons/react/dist/ssr";
 import { CountUp } from "@/components/ui/CountUp";
 import { WordLight } from "./WordLight";
 
-const STATS = [
+type Stat = {
+  Icon: typeof Robot;
+  value: number;
+  from?: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  /** Shows a trophy beside the number. */
+  trophy?: boolean;
+};
+
+const STATS: Stat[] = [
   { Icon: Robot, value: 25, suffix: "+", label: "AI agent & automation projects" },
-  { Icon: GlobeHemisphereEast, value: 7, label: "Countries served" },
-  { Icon: Trophy, value: 1, prefix: "#", label: "of 12 universities, national software engineering competition" },
-  { Icon: RocketLaunch, value: 2026, from: 2020, label: "Founded REVELA AI" },
+  { Icon: GlobeHemisphereEast, value: 7, suffix: "+", label: "Countries served" },
+  { Icon: GraduationCap, value: 1, prefix: "#", trophy: true, label: "of 12 universities, national software engineering competition" },
+  { Icon: RocketLaunch, value: 2026, from: 2020, label: "Founded Rovia AI" },
 ];
 
 const STATEMENT =
@@ -17,7 +28,7 @@ export function About() {
     <section id="about" aria-labelledby="about-title" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          {STATS.map(({ Icon, value, from, prefix, suffix, label }) => (
+          {STATS.map(({ Icon, value, from, prefix, suffix, label, trophy }) => (
             <li
               key={label}
               className="flex flex-col gap-4 rounded-2xl border border-line bg-surface/80 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:p-5"
@@ -26,8 +37,9 @@ export function About() {
                 <Icon size={22} />
               </span>
               <span className="min-w-0">
-                <span className="block font-display text-2xl font-semibold text-text sm:text-[1.7rem]">
+                <span className="flex items-center gap-2 font-display text-2xl font-semibold text-text sm:text-[1.7rem]">
                   <CountUp to={value} from={from} prefix={prefix} suffix={suffix} />
+                  {trophy && <Trophy size={24} weight="fill" className="text-[#f5c451]" aria-label="First place" />}
                 </span>
                 <span className="mt-0.5 block text-[13px] leading-snug text-muted">{label}</span>
               </span>
@@ -57,7 +69,7 @@ export function About() {
               </div>
               <div>
                 <dt className="text-faint">Building</dt>
-                <dd className="mt-1 text-text">REVELA AI, trust-first AI for aesthetic clinics</dd>
+                <dd className="mt-1 text-text">Rovia AI, trust-first AI services for real estate</dd>
               </div>
               <div>
                 <dt className="text-faint">Studied</dt>

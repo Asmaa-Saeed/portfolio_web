@@ -33,22 +33,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "revela-ai",
-    title: "REVELA AI",
+    slug: "rovia-ai",
+    title: "Rovia AI",
     role: "Founder & AI Product Builder",
     date: "2026 – now",
-    cover: "/covers/revela-ai.jpg",
-    poster: "/posters/revela-ai.jpg",
-    video: { type: "file", src: "/videos/revela-ai.mp4" },
+    cover: "/covers/rovia-ai.jpg",
+    poster: "/posters/rovia-ai.jpg",
+    video: { type: "file", src: "/videos/rovia-ai.mp4" },
     summary:
-      "A trust-sensitive SaaS for aesthetic clinics. AI handles lead conversion, scheduling, follow-up and client reactivation, while people stay in control of every sensitive decision.",
+      "AI services for real estate. Agents handle lead qualification, viewing scheduling, follow-up and client reactivation, while agents and brokers stay in control of every sensitive decision.",
     problem:
-      "Aesthetic clinics lose leads to slow replies and forgotten follow-ups, but the conversations involve health, pricing and personal details that cannot be left to an unsupervised bot.",
+      "Real estate teams lose buyers and tenants to slow replies and forgotten follow-ups, but the conversations involve prices, offers and personal details that cannot be left to an unsupervised bot.",
     solution:
-      "A multi-agent platform that qualifies inbound leads, books and reschedules appointments, runs follow-up sequences and reactivates past clients. Anything sensitive is routed to clinic staff for approval before it reaches a client.",
+      "A multi-agent platform that qualifies inbound leads, matches them to listings, books and reschedules viewings, runs follow-up sequences and reactivates past clients. Anything sensitive, such as pricing or offers, is routed to the team for approval before it reaches a client.",
     result:
-      "Routine messaging runs on its own, and every sensitive reply passes a human first. That makes AI usable in a market where trust decides who books.",
-    tags: ["SaaS", "AI Agents", "HITL"],
+      "Routine messaging runs on its own, and every sensitive reply passes a human first. That makes AI usable in a market where trust decides who signs.",
+    tags: ["Real Estate", "AI Agents", "HITL"],
   },
   {
     slug: "streak",
