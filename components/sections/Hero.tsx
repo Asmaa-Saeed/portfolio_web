@@ -36,8 +36,9 @@ export function Hero() {
             className="rise-in mt-6 max-w-[46ch] text-base leading-relaxed text-muted sm:text-lg"
             style={{ ["--delay" as string]: "260ms" }}
           >
-            AI agents, multi-agent systems and automations for real businesses, designed with the guardrails that
-            keep them accountable.
+            AI agents, multi-agent systems and automations that help businesses{" "}
+            <span className="text-text">save time and money</span>, designed with the guardrails that keep them
+            accountable.
           </p>
           <div className="rise-in mt-9 flex flex-wrap gap-3" style={{ ["--delay" as string]: "360ms" }}>
             <ButtonLink href="#projects">
