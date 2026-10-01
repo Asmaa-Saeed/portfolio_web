@@ -65,7 +65,7 @@ export function About() {
             <dl className="grid gap-4 text-sm">
               <div>
                 <dt className="text-faint">Currently</dt>
-                <dd className="mt-1 text-text">AI Automation Engineer at Aatene</dd>
+                <dd className="mt-1 text-text">Freelance AI Automation Engineer</dd>
               </div>
               <div>
                 <dt className="text-faint">Building</dt>

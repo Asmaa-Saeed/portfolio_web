@@ -72,7 +72,7 @@ export const projects: Project[] = [
     slug: "business-operations-agents",
     title: "Business Operations Agents",
     role: "AI Automation Engineer · Aatene",
-    date: "2026 – now",
+    date: "Mar – Sep 2026",
     cover: "/covers/business-operations-agents.jpg",
     poster: "/posters/business-operations-agents.jpg",
     video: { type: "file", src: "/videos/business-operations-agents.mp4" },
@@ -95,14 +95,14 @@ export const projects: Project[] = [
     poster: "/posters/carousel-maker.jpg",
     video: { type: "file", src: "/videos/carousel-maker.mp4" },
     summary:
-      "n8n workflows that generate carousel copy and create or edit images with AI, then return the finished assets to a Laravel backend.",
+      "n8n workflows that generate carousel copy and create or edit images with AI, then return the finished assets to the product backend.",
     problem:
       "Producing social carousels meant writing copy, designing slides and uploading assets by hand for every post.",
     solution:
-      "Webhook-driven n8n workflows call OpenAI for text and image generation or editing, assemble the results and post them back to the product's Laravel API.",
+      "Webhook-driven n8n workflows call OpenAI for text and image generation or editing, assemble the results and post them back to the product's API.",
     result:
       "Users go from a brief to ready-to-publish slides inside the product, with the AI work fully handled behind the API.",
-    tags: ["n8n", "OpenAI", "Laravel"],
+    tags: ["n8n", "OpenAI", "Image generation"],
   },
   {
     slug: "self-hosted-n8n-mcp",

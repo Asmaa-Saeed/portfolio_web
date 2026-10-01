@@ -1,8 +1,8 @@
 import { Marquee } from "@/components/ui/Marquee";
 
 const TOOLS = [
-  "n8n", "OpenAI", "Claude", "MCP", "Python", "Flask", "PostgreSQL", "RAG", "Docker",
-  "Make", "FFmpeg", "Laravel", "Next.js", "React", "TypeScript", "Tailwind CSS",
+  "n8n", "OpenAI", "Claude", "LangChain", "MCP", "Python", "Flask", "PostgreSQL", "RAG", "Docker",
+  "Make", "FFmpeg", "Next.js", "React", "TypeScript", "Tailwind CSS",
 ];
 
 export function Tools() {

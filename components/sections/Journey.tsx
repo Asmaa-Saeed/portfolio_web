@@ -16,9 +16,9 @@ const KINDS = {
 type Entry = { kind: keyof typeof KINDS; date?: string; title: string; org?: string; note?: string };
 
 const ENTRIES: Entry[] = [
-  { kind: "work", date: "Mar 2026 – now", title: "AI Automation Engineer", org: "Aatene" },
+  { kind: "work", date: "2025 – now", title: "Freelance AI Automation Engineer", org: "Clients in 7+ countries" },
   { kind: "work", date: "2026 – now", title: "Founder", org: "Rovia AI" },
-  { kind: "work", date: "2025 – 2026", title: "Freelance AI Automation Engineer", org: "Clients in 7 countries" },
+  { kind: "work", date: "Mar 2026 – Sep 2026", title: "AI Automation Engineer", org: "Aatene" },
   {
     kind: "study",
     date: "2021 – 2025",
