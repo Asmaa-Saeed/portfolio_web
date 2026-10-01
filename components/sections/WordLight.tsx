@@ -10,9 +10,10 @@ export function WordLight({ text, className = "" }: { text: string; className?: 
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
-      const words = ref.current?.querySelectorAll("[data-w]");
-      if (!words) return;
+      const root = ref.current;
+      if (!root || prefersReducedMotion()) return;
+      const words = root.querySelectorAll("[data-w]");
+      if (!words.length) return;
       gsap.fromTo(
         words,
         { opacity: 0.16 },
@@ -20,11 +21,11 @@ export function WordLight({ text, className = "" }: { text: string; className?: 
           opacity: 1,
           ease: "none",
           stagger: 0.1,
-          scrollTrigger: { trigger: ref.current, start: "top 80%", end: "bottom 45%", scrub: true },
+          scrollTrigger: { trigger: root, start: "top 80%", end: "bottom 45%", scrub: true },
         },
       );
     },
-    { scope: ref },
+    [],
   );
 
   return (

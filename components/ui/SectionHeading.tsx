@@ -20,19 +20,20 @@ export function SectionHeading({ id, badge, title, description, align = "start",
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
-      const words = ref.current?.querySelectorAll("[data-word]");
-      const extras = ref.current?.querySelectorAll("[data-fade]");
-      if (!words?.length) return;
+      const root = ref.current;
+      if (!root || prefersReducedMotion()) return;
+      const words = root.querySelectorAll("[data-word]");
+      const extras = root.querySelectorAll("[data-fade]");
+      if (!words.length) return;
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+        scrollTrigger: { trigger: root, start: "top 85%", once: true },
       });
       tl.from(words, { yPercent: 110, duration: 0.9, ease: "power4.out", stagger: 0.06 });
-      if (extras?.length) {
+      if (extras.length) {
         tl.from(extras, { y: 16, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.08 }, 0.15);
       }
     },
-    { scope: ref },
+    [],
   );
 
   const centered = align === "center";

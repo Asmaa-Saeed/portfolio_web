@@ -17,15 +17,16 @@ export function ProjectRow({ project, index, onOpen }: Props) {
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
-      const tl = gsap.timeline({ scrollTrigger: { trigger: ref.current, start: "top 78%", once: true } });
-      tl.from("[data-media]", { x: flip ? 60 : -60, opacity: 0, duration: 1, ease: "power3.out" }).from(
-        "[data-copy] > *",
+      const root = ref.current;
+      if (!root || prefersReducedMotion()) return;
+      const tl = gsap.timeline({ scrollTrigger: { trigger: root, start: "top 78%", once: true } });
+      tl.from(root.querySelectorAll("[data-media]"), { x: flip ? 60 : -60, opacity: 0, duration: 1, ease: "power3.out" }).from(
+        root.querySelectorAll("[data-copy] > *"),
         { y: 24, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.07 },
         0.15,
       );
     },
-    { scope: ref },
+    { dependencies: [flip] },
   );
 
   const titleId = `project-${project.slug}`;

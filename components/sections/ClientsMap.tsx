@@ -42,19 +42,20 @@ export function ClientsMap() {
 
   useGSAP(
     () => {
-      if (reduced) return;
-      const arcs = gsap.utils.toArray<SVGPathElement>("[data-arc]");
+      const root = ref.current;
+      if (!root || reduced) return;
+      const arcs = Array.from(root.querySelectorAll<SVGPathElement>("[data-arc]"));
       arcs.forEach((p) => {
         const len = p.getTotalLength();
         gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
       });
-      const tl = gsap.timeline({ scrollTrigger: { trigger: ref.current, start: "top 70%", once: true } });
-      tl.from("[data-client-layer]", { opacity: 0, duration: 0.8 })
+      const tl = gsap.timeline({ scrollTrigger: { trigger: root, start: "top 70%", once: true } });
+      tl.from(root.querySelectorAll("[data-client-layer]"), { opacity: 0, duration: 0.8 })
         .to(arcs, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut", stagger: 0.18 }, 0.2)
-        .from("[data-pin]", { scale: 0, transformOrigin: "center", duration: 0.5, ease: "back.out(2)", stagger: 0.18 }, 0.9)
-        .from("[data-label]", { opacity: 0, y: 6, duration: 0.4, stagger: 0.18 }, 1.1);
+        .from(root.querySelectorAll("[data-pin]"), { scale: 0, transformOrigin: "center", duration: 0.5, ease: "back.out(2)", stagger: 0.18 }, 0.9)
+        .from(root.querySelectorAll("[data-label]"), { opacity: 0, y: 6, duration: 0.4, stagger: 0.18 }, 1.1);
     },
-    { scope: ref, dependencies: [reduced] },
+    { dependencies: [reduced] },
   );
 
   return (

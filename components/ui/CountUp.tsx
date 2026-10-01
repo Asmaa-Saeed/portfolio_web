@@ -26,7 +26,7 @@ export function CountUp({ to, from = 0, prefix = "", suffix = "", duration = 1.6
         },
       });
     },
-    { scope: ref },
+    [],
   );
 
   return (

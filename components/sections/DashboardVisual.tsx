@@ -13,13 +13,14 @@ export function DashboardVisual() {
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
-      const tl = gsap.timeline({ scrollTrigger: { trigger: ref.current, start: "top 80%", once: true } });
-      tl.from("[data-bar]", { scaleY: 0, transformOrigin: "bottom", duration: 0.9, ease: "power3.out", stagger: 0.05 })
-        .from("[data-line]", { strokeDashoffset: 600, duration: 1.4, ease: "power2.inOut" }, 0.2)
-        .from("[data-kpi]", { y: 12, opacity: 0, stagger: 0.1, duration: 0.6 }, 0.4);
+      const root = ref.current;
+      if (!root || prefersReducedMotion()) return;
+      const tl = gsap.timeline({ scrollTrigger: { trigger: root, start: "top 80%", once: true } });
+      tl.from(root.querySelectorAll("[data-bar]"), { scaleY: 0, transformOrigin: "bottom", duration: 0.9, ease: "power3.out", stagger: 0.05 })
+        .from(root.querySelectorAll("[data-line]"), { strokeDashoffset: 600, duration: 1.4, ease: "power2.inOut" }, 0.2)
+        .from(root.querySelectorAll("[data-kpi]"), { y: 12, opacity: 0, stagger: 0.1, duration: 0.6 }, 0.4);
     },
-    { scope: ref },
+    [],
   );
 
   return (

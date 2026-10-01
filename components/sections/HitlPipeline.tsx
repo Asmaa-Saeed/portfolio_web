@@ -19,8 +19,10 @@ export function HitlPipeline() {
 
   useGSAP(
     () => {
-      const nodes = gsap.utils.toArray<HTMLElement>("[data-node]");
-      const links = gsap.utils.toArray<HTMLElement>("[data-link]");
+      const root = ref.current;
+      if (!root) return;
+      const nodes = Array.from(root.querySelectorAll<HTMLElement>("[data-node]"));
+      const links = Array.from(root.querySelectorAll<HTMLElement>("[data-link]"));
       if (reduced) {
         gsap.set(nodes, { "--on": 1 });
         gsap.set(links, { "--p": 1 });
@@ -41,14 +43,14 @@ export function HitlPipeline() {
 
       gsap.timeline({
         scrollTrigger: {
-          trigger: ref.current,
+          trigger: root,
           start: "top 80%",
           end: "bottom 10%",
           onToggle: (self) => (self.isActive ? tl.play() : tl.pause()),
         },
       });
     },
-    { scope: ref, dependencies: [reduced] },
+    { dependencies: [reduced] },
   );
 
   return (
