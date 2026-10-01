@@ -41,8 +41,8 @@ export function Services() {
             </div>
             <h3 className="mt-6 font-display text-2xl font-semibold text-text sm:text-3xl">Project Dashboards</h3>
             <p className="mt-3 max-w-[52ch] text-base leading-relaxed text-muted">
-              Dashboards people actually open. Live KPIs, pipeline health and agent activity in one clear view, designed
-              so a team can see what changed and decide what to do next.
+              Live dashboards wired directly into the automations and agents I build. Every workflow run, lead, approval
+              and hand-off shows up as it happens, so you can see what your system is doing and where it needs a human.
             </p>
             <DashboardVisual />
           </article>
