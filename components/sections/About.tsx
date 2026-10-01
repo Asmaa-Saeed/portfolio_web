@@ -9,14 +9,14 @@ type Stat = {
   prefix?: string;
   suffix?: string;
   label: string;
-  /** Shows a trophy beside the number. */
+  /** Shows a trophy in front of the number. */
   trophy?: boolean;
 };
 
 const STATS: Stat[] = [
   { Icon: Robot, value: 25, suffix: "+", label: "AI agent & automation projects" },
   { Icon: GlobeHemisphereEast, value: 7, suffix: "+", label: "Countries served" },
-  { Icon: GraduationCap, value: 1, prefix: "#", trophy: true, label: "of 12 universities, national software engineering competition" },
+  { Icon: GraduationCap, value: 1, trophy: true, label: "of 12 universities, national software engineering competition" },
   { Icon: RocketLaunch, value: 2026, from: 2020, label: "Founded Rovia AI" },
 ];
 
@@ -38,8 +38,8 @@ export function About() {
               </span>
               <span className="min-w-0">
                 <span className="flex items-center gap-2 font-display text-2xl font-semibold text-text sm:text-[1.7rem]">
+                  {trophy && <Trophy size={26} weight="fill" className="text-[#f5c451]" aria-label="First place" />}
                   <CountUp to={value} from={from} prefix={prefix} suffix={suffix} />
-                  {trophy && <Trophy size={24} weight="fill" className="text-[#f5c451]" aria-label="First place" />}
                 </span>
                 <span className="mt-0.5 block text-[13px] leading-snug text-muted">{label}</span>
               </span>
