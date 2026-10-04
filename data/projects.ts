@@ -56,8 +56,8 @@ export const projects: Project[] = [
     title: "Streak",
     role: "Freelance AI Automation Engineer",
     date: "2025 – 2026",
-    cover: "/covers/streak.jpg",
-    poster: "/posters/streak.jpg",
+    cover: "/covers/streak-logo.jpg",
+    poster: "/posters/streak-logo.jpg",
     video: { type: "file", src: "/videos/streak.mp4" },
     summary:
       "A fully automated citizen news channel. People report local events through a Telegram bot, an admin approves each video, FFmpeg edits it in about 90 seconds, and the story is published automatically to the right governorate's page.",

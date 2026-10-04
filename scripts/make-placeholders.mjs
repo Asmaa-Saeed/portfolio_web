@@ -1,13 +1,22 @@
-// Renders on-brand placeholder covers (16:10) and posters (9:16) for every
-// project in data/projects.ts. Replace the generated files with real media.
-// Usage: node scripts/make-placeholders.mjs   (needs playwright-core + Chromium)
-import { readFileSync } from "node:fs";
+// Renders on-brand placeholder covers (16:10) and posters (9:16) for projects
+// in data/projects.ts that do not have media yet. Existing files are kept, so
+// real covers are never overwritten; pass --force to regenerate everything.
+// Usage: node scripts/make-placeholders.mjs [--force]   (needs playwright-core + Chromium)
+import { existsSync, readFileSync } from "node:fs";
 import { chromium } from "playwright-core";
 
 const src = readFileSync(new URL("../data/projects.ts", import.meta.url), "utf8");
-const projects = [...src.matchAll(/^\s{4}slug: "([^"]+)",\n\s{4}title: "([^"]+)",[\s\S]*?tags: \[([^\]]*)\]/gm)].map(
-  ([, slug, title, tags]) => ({ slug, title, tags: [...tags.matchAll(/"([^"]+)"/g)].map((m) => m[1]) }),
-);
+const projects = [
+  ...src.matchAll(
+    /^\s{4}slug: "([^"]+)",\n\s{4}title: "([^"]+)",[\s\S]*?cover: "([^"]+)",\n\s{4}poster: "([^"]+)",[\s\S]*?tags: \[([^\]]*)\]/gm,
+  ),
+].map(([, slug, title, cover, poster, tags]) => ({
+  slug,
+  title,
+  covers: cover,
+  posters: poster,
+  tags: [...tags.matchAll(/"([^"]+)"/g)].map((m) => m[1]),
+}));
 
 const HUES = [265, 245, 285, 230, 300, 255];
 
@@ -60,12 +69,15 @@ function html({ title, tags }, i, w, h) {
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
 const page = await browser.newPage();
+const force = process.argv.includes("--force");
 for (const [i, p] of projects.entries()) {
   for (const [dir, w, h] of [["covers", 1600, 1000], ["posters", 1080, 1920]]) {
+    const file = `public${p[dir]}`;
+    if (!force && existsSync(file)) continue;
     await page.setViewportSize({ width: w, height: h });
     await page.setContent(html(p, i, w, h), { waitUntil: "networkidle" });
-    await page.screenshot({ path: `public/${dir}/${p.slug}.jpg`, type: "jpeg", quality: 82 });
+    await page.screenshot({ path: file, type: "jpeg", quality: 82 });
+    console.log("rendered", file);
   }
-  console.log("rendered", p.slug);
 }
 await browser.close();
