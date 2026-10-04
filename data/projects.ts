@@ -52,6 +52,27 @@ export const projects: Project[] = [
     tags: ["Real Estate", "AI Agents", "HITL"],
   },
   {
+    slug: "voicehub-bank-agent",
+    title: "Arabic AI Voice Agent for Banks",
+    role: "AI Automation Engineer",
+    cover: "/covers/voicehub-bank-agent.jpg",
+    poster: "/posters/voicehub-bank-agent.jpg",
+    video: { type: "file", src: "/videos/voicehub-bank-agent.mp4" },
+    summary:
+      "A voice AI agent for bank customer service that speaks Gulf Arabic. It verifies each caller's identity against customer records before sharing anything, and answers common banking questions from a knowledge base.",
+    problem:
+      "Bank call centres spend much of their time on identity checks and repeated questions, and a voice agent in that role must never reveal account details to someone it has not verified.",
+    solution: [
+      "A voice agent built on VoiceHub that holds a natural, spoken conversation in Gulf Arabic.",
+      "Identity verification: the agent asks for the 8-digit account number and the caller's details, and checks them against customer records in Airtable before going any further.",
+      "Safe failure paths: a wrong account number or a national ID that does not match is declined politely, and the agent stops after the allowed attempts to protect the account.",
+      "A knowledge base the bank can update, so the agent answers questions about opening hours, services and products.",
+    ],
+    result:
+      "Routine calls are handled end to end in the customer's own dialect, and no account information is shared until the caller's identity is confirmed.",
+    tags: ["Voice AI", "VoiceHub", "Airtable", "Gulf Arabic", "Knowledge Base", "Identity Verification"],
+  },
+  {
     slug: "streak",
     title: "Streak",
     role: "Freelance AI Automation Engineer",
