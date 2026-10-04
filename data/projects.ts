@@ -100,8 +100,8 @@ export const projects: Project[] = [
     role: "AI Automation Engineer · Aatene",
     date: "2026",
     cover: "/covers/aatene-omnichannel.jpg",
-    poster: "/posters/aatene-omnichannel.jpg",
-    video: { type: "file", src: "/videos/omnichannel-ai-support.mp4" },
+    poster: "/posters/aatene-omnichannel-title.jpg",
+    video: { type: "file", src: "/videos/aatene-omnichannel.mp4" },
     summary:
       "The AI layer for an enterprise customer support platform. One AI assistant answers customers on the website, WhatsApp, Instagram, Facebook Messenger and the mobile app, and hands the conversation to a human when needed.",
     problem:
