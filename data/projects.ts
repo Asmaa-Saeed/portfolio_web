@@ -52,6 +52,29 @@ export const projects: Project[] = [
     tags: ["Real Estate", "AI Agents", "HITL"],
   },
   {
+    slug: "aya-sofia-cafe-ai",
+    title: "Aya Sofia Café AI Assistant",
+    role: "Freelance AI Automation Engineer",
+    cover: "/covers/aya-sofia-cafe-ai.jpg",
+    poster: "/posters/aya-sofia-cafe-ai.jpg",
+    video: { type: "file", src: "/videos/aya-sofia-cafe-ai.mp4" },
+    summary:
+      "An Instagram AI assistant for Aya Sofia Café. Customers order in DMs, the AI takes the full order, and the café runs everything from one live dashboard: orders, status updates, chats, analytics and the menu.",
+    problem:
+      "Instagram DMs are where the café's customers order, but answering every message, writing down orders and following up by hand does not scale at busy times.",
+    solution: [
+      "An AI agent in Instagram DMs that answers menu, delivery and pickup questions, takes the full order and confirms it with the customer's name, phone and total.",
+      "New orders land on a live web dashboard instantly with a sound alert, so staff can accept and start preparing them.",
+      "Automatic status updates: the customer is messaged on Instagram as the order moves from preparing to ready to delivered.",
+      "Live chats with human takeover: complaints are flagged, staff can reply from the dashboard, and the bot pauses for a set time after a person steps in.",
+      "Sales analytics and a customer CRM: revenue, order count, average order value, best-selling items and each customer's history.",
+      "Menu and settings management: item availability, opening hours, and the bot's tone and reply style.",
+    ],
+    result:
+      "Orders are taken in the channel customers already use, nothing gets lost at busy times, and staff stay in control from one dashboard.",
+    tags: ["Instagram DM", "AI Agent", "Live Dashboard", "HITL", "CRM", "Analytics"],
+  },
+  {
     slug: "streak",
     title: "Streak",
     role: "Freelance AI Automation Engineer",
