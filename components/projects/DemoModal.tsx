@@ -113,10 +113,12 @@ export function DemoModal({ project, onClose }: Props) {
             ) : videoFailed ? (
               <div className="absolute inset-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={project.poster} alt="" className="h-full w-full object-cover opacity-60" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
-                  <VideoCamera size={28} className="text-accent-soft" />
-                  <p className="text-sm text-text">Demo video coming soon</p>
+                <img src={project.poster} alt="" className="h-full w-full object-cover" />
+                <div className="absolute inset-x-0 bottom-5 flex justify-center px-4">
+                  <p className="flex items-center gap-2 rounded-full border border-white/15 bg-bg/75 px-4 py-2 text-sm text-text backdrop-blur-md">
+                    <VideoCamera size={16} className="text-accent-soft" />
+                    Demo video coming soon
+                  </p>
                 </div>
               </div>
             ) : (

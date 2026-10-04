@@ -38,8 +38,8 @@ export const projects: Project[] = [
     title: "Rovia AI",
     role: "Founder & AI Product Builder",
     date: "2026 – now",
-    cover: "/covers/rovia-ai.jpg",
-    poster: "/posters/rovia-ai.jpg",
+    cover: "/covers/rovia-ai-logo.jpg",
+    poster: "/posters/rovia-ai-logo.jpg",
     video: { type: "file", src: "/videos/rovia-ai.mp4" },
     summary:
       "AI services for real estate. Agents handle lead qualification, viewing scheduling, follow-up and client reactivation, while agents and brokers stay in control of every sensitive decision.",
