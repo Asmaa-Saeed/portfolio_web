@@ -140,41 +140,6 @@ export const projects: Project[] = [
     tags: ["Instagram DM", "AI Agent", "Live Dashboard", "HITL", "CRM", "Analytics"],
   },
   {
-    slug: "carousel-maker",
-    title: "Carousel Maker",
-    role: "AI Automation Engineer · Aatene",
-    date: "2026",
-    cover: "/covers/carousel-maker.jpg",
-    poster: "/posters/carousel-maker.jpg",
-    video: { type: "file", src: "/videos/carousel-maker.mp4" },
-    summary:
-      "n8n workflows that generate carousel copy and create or edit images with AI, then return the finished assets to the product backend.",
-    problem:
-      "Producing social carousels meant writing copy, designing slides and uploading assets by hand for every post.",
-    solution:
-      "Webhook-driven n8n workflows call OpenAI for text and image generation or editing, assemble the results and post them back to the product's API.",
-    result:
-      "Users go from a brief to ready-to-publish slides inside the product, with the AI work fully handled behind the API.",
-    tags: ["n8n", "OpenAI", "Image generation"],
-  },
-  {
-    slug: "self-hosted-n8n-mcp",
-    title: "Self-Hosted n8n + MCP",
-    role: "Personal project",
-    cover: "/covers/self-hosted-n8n-mcp.jpg",
-    poster: "/posters/self-hosted-n8n-mcp.jpg",
-    video: { type: "file", src: "/videos/self-hosted-n8n-mcp.mp4" },
-    summary:
-      "n8n self-hosted with Docker on a VPS and connected to Claude through the Model Context Protocol, so an AI assistant can discover and run workflows directly.",
-    problem:
-      "Hosted automation plans get expensive and limiting, and AI assistants had no safe way to trigger real workflows.",
-    solution:
-      "A Dockerised n8n instance on a VPS, exposed to Claude through MCP with a scoped set of workflows the assistant is allowed to call.",
-    result:
-      "Workflows can be triggered from a conversation, on infrastructure that is fully owned and controlled.",
-    tags: ["n8n", "Docker", "MCP"],
-  },
-  {
     slug: "ugc-ads",
     title: "UGC Ads",
     role: "AI Automation Engineer",
@@ -211,4 +176,46 @@ export const projects: Project[] = [
   //   tags: [],
   //   links: [{ label: "Live site", href: "https://" }],
   // },
+];
+
+/**
+ * Projects kept for later but not shown on the site. Move an entry back into
+ * `projects` above to publish it again.
+ */
+export const hiddenProjects: Project[] = [
+  {
+    slug: "carousel-maker",
+    title: "Carousel Maker",
+    role: "AI Automation Engineer · Aatene",
+    date: "2026",
+    cover: "/covers/carousel-maker.jpg",
+    poster: "/posters/carousel-maker.jpg",
+    video: { type: "file", src: "/videos/carousel-maker.mp4" },
+    summary:
+      "n8n workflows that generate carousel copy and create or edit images with AI, then return the finished assets to the product backend.",
+    problem:
+      "Producing social carousels meant writing copy, designing slides and uploading assets by hand for every post.",
+    solution:
+      "Webhook-driven n8n workflows call OpenAI for text and image generation or editing, assemble the results and post them back to the product's API.",
+    result:
+      "Users go from a brief to ready-to-publish slides inside the product, with the AI work fully handled behind the API.",
+    tags: ["n8n", "OpenAI", "Image generation"],
+  },
+  {
+    slug: "self-hosted-n8n-mcp",
+    title: "Self-Hosted n8n + MCP",
+    role: "Personal project",
+    cover: "/covers/self-hosted-n8n-mcp.jpg",
+    poster: "/posters/self-hosted-n8n-mcp.jpg",
+    video: { type: "file", src: "/videos/self-hosted-n8n-mcp.mp4" },
+    summary:
+      "n8n self-hosted with Docker on a VPS and connected to Claude through the Model Context Protocol, so an AI assistant can discover and run workflows directly.",
+    problem:
+      "Hosted automation plans get expensive and limiting, and AI assistants had no safe way to trigger real workflows.",
+    solution:
+      "A Dockerised n8n instance on a VPS, exposed to Claude through MCP with a scoped set of workflows the assistant is allowed to call.",
+    result:
+      "Workflows can be triggered from a conversation, on infrastructure that is fully owned and controlled.",
+    tags: ["n8n", "Docker", "MCP"],
+  },
 ];
