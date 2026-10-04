@@ -74,22 +74,26 @@ export const projects: Project[] = [
     tags: ["Telegram Bot", "n8n", "FFmpeg", "PostgreSQL", "Python", "GPT-4.1-mini", "HITL"],
   },
   {
-    slug: "business-operations-agents",
-    title: "Business Operations Agents",
+    slug: "omnichannel-ai-support",
+    title: "Omnichannel AI Customer Support Platform",
     role: "AI Automation Engineer · Aatene",
-    date: "Mar – Sep 2026",
-    cover: "/covers/business-operations-agents.jpg",
-    poster: "/posters/business-operations-agents.jpg",
-    video: { type: "file", src: "/videos/business-operations-agents.mp4" },
+    date: "2026",
+    cover: "/covers/aatene-omnichannel.jpg",
+    poster: "/posters/aatene-omnichannel.jpg",
+    video: { type: "file", src: "/videos/omnichannel-ai-support.mp4" },
     summary:
-      "RAG and human-in-the-loop agents that answer questions from company knowledge and carry out day-to-day operational tasks, with approval checkpoints where they matter.",
+      "The AI layer for an enterprise customer support platform. One AI assistant answers customers on the website, WhatsApp, Instagram, Facebook Messenger and the mobile app, and hands the conversation to a human when needed.",
     problem:
-      "Operational knowledge was scattered across documents and people, and repetitive requests took up the team's time.",
-    solution:
-      "Retrieval-augmented agents served from a Python/Flask backend and orchestrated with n8n. They ground answers in internal documents and pause for human review before taking consequential actions.",
+      "Customers reach the business on five different channels. Answering each one separately is slow and inconsistent, and some conversations still need a person to step in.",
+    solution: [
+      "Designed the AI automation layer behind a single assistant that serves the website, WhatsApp, Instagram, Facebook Messenger and the mobile app.",
+      "Built Flask APIs that connect the platform's front ends to n8n automation workflows and OpenAI.",
+      "Built RAG pipelines on Supabase Vector Store so answers come from the company's own knowledge base, plus automation that keeps that knowledge base trained.",
+      "Built human handoff workflows that escalate a conversation to the support team whenever the assistant should not handle it alone.",
+    ],
     result:
-      "The team gets grounded answers and automated routine work, while keeping the final say on anything that affects customers or money.",
-    tags: ["RAG", "HITL", "Python", "Flask", "n8n", "OpenAI"],
+      "One assistant across every channel, answers grounded in company knowledge, and a clear path to a human when it matters.",
+    tags: ["n8n", "Flask", "OpenAI", "RAG", "PostgreSQL", "Supabase", "HITL"],
   },
   {
     slug: "carousel-maker",
