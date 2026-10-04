@@ -73,28 +73,6 @@ export const projects: Project[] = [
     tags: ["Voice AI", "VoiceHub", "Airtable", "Gulf Arabic", "Knowledge Base", "Identity Verification"],
   },
   {
-    slug: "streak",
-    title: "Streak",
-    role: "Freelance AI Automation Engineer",
-    date: "2025 – 2026",
-    cover: "/covers/streak-logo.jpg",
-    poster: "/posters/streak-logo.jpg",
-    video: { type: "file", src: "/videos/streak.mp4" },
-    summary:
-      "A fully automated citizen news channel. People report local events through a Telegram bot, an admin approves each video, FFmpeg edits it in about 90 seconds, and the story is published automatically to the right governorate's page.",
-    problem:
-      "The client wanted a news channel fed by citizen reports, with a separate page for every governorate, while keeping AI API costs as close to zero as possible. That ruled out the usual approach of using AI for editing and captions.",
-    solution: [
-      "A Telegram bot where the reporter picks the governorate and area, describes the event and uploads the video. AI is used for one small step only: classifying the event.",
-      "Admin review: every video goes to an admin who approves or rejects it, and the reporter is notified either way, with the reason when it is rejected.",
-      "Automatic editing with free, open-source FFmpeg on a Hostinger server. In about 90 seconds the admin receives an edited video and caption, ready to publish.",
-      "Automatic publishing to a large network of pages, one per governorate, plus a dashboard where the admin follows every submission and its statistics.",
-    ],
-    result:
-      "A complete newsroom pipeline from a phone video to a published post, with almost no API cost, a human approving everything before it goes live, and one dashboard to run it all.",
-    tags: ["Telegram Bot", "n8n", "FFmpeg", "PostgreSQL", "Python", "GPT-4.1-mini", "HITL"],
-  },
-  {
     slug: "omnichannel-ai-support",
     title: "Omnichannel AI Customer Support Platform",
     role: "AI Automation Engineer · Aatene",
@@ -138,6 +116,28 @@ export const projects: Project[] = [
     result:
       "Orders are taken in the channel customers already use, nothing gets lost at busy times, and staff stay in control from one dashboard.",
     tags: ["Instagram DM", "AI Agent", "Live Dashboard", "HITL", "CRM", "Analytics"],
+  },
+  {
+    slug: "streak",
+    title: "Streak",
+    role: "Freelance AI Automation Engineer",
+    date: "2025 – 2026",
+    cover: "/covers/streak-logo.jpg",
+    poster: "/posters/streak-logo.jpg",
+    video: { type: "file", src: "/videos/streak.mp4" },
+    summary:
+      "A fully automated citizen news channel. People report local events through a Telegram bot, an admin approves each video, FFmpeg edits it in about 90 seconds, and the story is published automatically to the right governorate's page.",
+    problem:
+      "The client wanted a news channel fed by citizen reports, with a separate page for every governorate, while keeping AI API costs as close to zero as possible. That ruled out the usual approach of using AI for editing and captions.",
+    solution: [
+      "A Telegram bot where the reporter picks the governorate and area, describes the event and uploads the video. AI is used for one small step only: classifying the event.",
+      "Admin review: every video goes to an admin who approves or rejects it, and the reporter is notified either way, with the reason when it is rejected.",
+      "Automatic editing with free, open-source FFmpeg on a Hostinger server. In about 90 seconds the admin receives an edited video and caption, ready to publish.",
+      "Automatic publishing to a large network of pages, one per governorate, plus a dashboard where the admin follows every submission and its statistics.",
+    ],
+    result:
+      "A complete newsroom pipeline from a phone video to a published post, with almost no API cost, a human approving everything before it goes live, and one dashboard to run it all.",
+    tags: ["Telegram Bot", "n8n", "FFmpeg", "PostgreSQL", "Python", "GPT-4.1-mini", "HITL"],
   },
   {
     slug: "ugc-ads",
