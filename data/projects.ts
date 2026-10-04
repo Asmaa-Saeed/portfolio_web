@@ -153,6 +153,27 @@ export const projects: Project[] = [
       "Workflows can be triggered from a conversation, on infrastructure that is fully owned and controlled.",
     tags: ["n8n", "Docker", "MCP"],
   },
+  {
+    slug: "ugc-ads",
+    title: "UGC Ads",
+    role: "AI Automation Engineer",
+    cover: "/covers/ugc-ads.jpg",
+    poster: "/posters/ugc-ads.jpg",
+    video: { type: "file", src: "/videos/ugc-ads.mp4" },
+    summary:
+      "An AI pipeline that produces UGC-style video ads: short, creator-style clips of a person presenting a product, ready for TikTok, Instagram, Facebook and YouTube.",
+    problem:
+      "UGC ads convert well, but hiring creators and filming, editing and approving every variation is slow and expensive, especially when a brand needs many versions to test.",
+    solution: [
+      "An AI agent that turns a product and a brief into a UGC-style ad script.",
+      "Automated generation of the video and visuals for each ad.",
+      "A review step where every ad is checked and approved before it goes out.",
+      "Publishing to TikTok, Instagram, Facebook and YouTube from one workflow.",
+    ],
+    result:
+      "Brands get a steady flow of creator-style ads to test across platforms, without organising a shoot for each one.",
+    tags: ["UGC", "AI Video", "AI Agents", "Social Media", "Automation"],
+  },
   // Template for the next project: uncomment and fill in.
   // {
   //   slug: "next-project",
