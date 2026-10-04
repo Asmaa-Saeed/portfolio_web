@@ -147,9 +147,24 @@ export function DemoModal({ project, onClose }: Props) {
               ["What I built", project.solution],
               ["Result", project.result],
             ].map(([label, body]) => (
-              <div key={label}>
+              <div key={label as string}>
                 <dt className="text-xs font-medium uppercase tracking-wider text-faint">{label}</dt>
-                <dd className="mt-2 text-[15px] leading-relaxed text-muted">{body}</dd>
+                <dd className="mt-2 text-[15px] leading-relaxed text-muted">
+                  {Array.isArray(body) ? (
+                    <ol className="space-y-3">
+                      {body.map((step, i) => (
+                        <li key={i} className="flex gap-3">
+                          <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border border-accent/40 bg-accent/10 text-xs font-medium text-accent-soft">
+                            {i + 1}
+                          </span>
+                          <span>{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    body
+                  )}
+                </dd>
               </div>
             ))}
             <div>

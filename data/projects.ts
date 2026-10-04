@@ -25,7 +25,8 @@ export type Project = {
   /** 2–3 lines shown in the project row. */
   summary: string;
   problem: string;
-  solution: string;
+  /** A paragraph, or a list of steps shown as a numbered list. */
+  solution: string | string[];
   result: string;
   tags: string[];
   links?: ProjectLink[];
@@ -59,14 +60,18 @@ export const projects: Project[] = [
     poster: "/posters/streak.jpg",
     video: { type: "file", src: "/videos/streak.mp4" },
     summary:
-      "A citizen-journalism agent framework. It processes local video reports, routes them for human approval and prepares approved stories for news distribution.",
+      "A fully automated citizen news channel. People report local events through a Telegram bot, an admin approves each video, FFmpeg edits it in about 90 seconds, and the story is published automatically to the right governorate's page.",
     problem:
-      "Local reports arrive as raw phone videos with no structure. Editors need to verify each one quickly without publishing anything unchecked.",
-    solution:
-      "An n8n pipeline that ingests submissions, processes video with FFmpeg, transcribes and summarises with GPT-4.1-mini, and stores everything in PostgreSQL. Each report goes to an editor for approval, then becomes a distribution-ready package.",
+      "The client wanted a news channel fed by citizen reports, with a separate page for every governorate, while keeping AI API costs as close to zero as possible. That ruled out the usual approach of using AI for editing and captions.",
+    solution: [
+      "A Telegram bot where the reporter picks the governorate and area, describes the event and uploads the video. AI is used for one small step only: classifying the event.",
+      "Admin review: every video goes to an admin who approves or rejects it, and the reporter is notified either way, with the reason when it is rejected.",
+      "Automatic editing with free, open-source FFmpeg on a Hostinger server. In about 90 seconds the admin receives an edited video and caption, ready to publish.",
+      "Automatic publishing to a large network of pages, one per governorate, plus a dashboard where the admin follows every submission and its statistics.",
+    ],
     result:
-      "Editors review a structured brief instead of raw footage, and nothing is published without an explicit human sign-off.",
-    tags: ["n8n", "PostgreSQL", "GPT-4.1-mini", "Python", "FFmpeg"],
+      "A complete newsroom pipeline from a phone video to a published post, with almost no API cost, a human approving everything before it goes live, and one dashboard to run it all.",
+    tags: ["Telegram Bot", "n8n", "FFmpeg", "PostgreSQL", "Python", "GPT-4.1-mini", "HITL"],
   },
   {
     slug: "business-operations-agents",
