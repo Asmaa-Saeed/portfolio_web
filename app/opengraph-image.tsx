@@ -22,8 +22,8 @@ export default function OpengraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          background: "radial-gradient(circle at 75% 50%, #3b2457 0%, #0e0a15 55%)",
-          color: "#f3eefa",
+          background: "radial-gradient(circle at 75% 50%, #2a1760 0%, #070912 55%)",
+          color: "#eceaf7",
           fontFamily: "sans-serif",
           position: "relative",
         }}
@@ -38,7 +38,7 @@ export default function OpengraphImage() {
               width: d.s,
               height: d.s,
               borderRadius: 999,
-              background: "#c2adeb",
+              background: "#c4b5fd",
               opacity: d.o,
             }}
           />
@@ -50,15 +50,15 @@ export default function OpengraphImage() {
               alignSelf: "flex-start",
               padding: "8px 18px",
               borderRadius: 999,
-              background: "rgba(138,99,167,0.22)",
-              color: "#c2adeb",
+              background: "rgba(139,92,246,0.18)",
+              color: "#c4b5fd",
               fontSize: 24,
             }}
           >
             AI Automation Engineer &amp; Web Developer
           </div>
           <div style={{ fontSize: 84, fontWeight: 700, marginTop: 28, letterSpacing: -2 }}>Asmaa Sakr</div>
-          <div style={{ fontSize: 38, color: "#bc90d1", marginTop: 12 }}>Building AI we can trust.</div>
+          <div style={{ fontSize: 38, color: "#a78bfa", marginTop: 12 }}>Building AI we can trust.</div>
         </div>
       </div>
     ),

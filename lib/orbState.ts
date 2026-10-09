@@ -6,10 +6,10 @@
 export type OrbPalette = readonly [string, string, string];
 
 export const ORB_PALETTES = {
-  hero: ["#8a63a7", "#b5a2e1", "#f5efff"],
-  projects: ["#6a4699", "#9e6eb6", "#e6dcfa"],
-  responsible: ["#9e6eb6", "#bc90d1", "#fbeaff"],
-  contact: ["#7b52b5", "#c2adeb", "#ffffff"],
+  hero: ["#8b5cf6", "#c4b5fd", "#f5f3ff"],
+  projects: ["#6366f1", "#a78bfa", "#e0e7ff"],
+  responsible: ["#d946ef", "#a78bfa", "#fce7f3"],
+  contact: ["#7c3aed", "#d8b4fe", "#ffffff"],
 } as const satisfies Record<string, OrbPalette>;
 
 export type OrbPaletteName = keyof typeof ORB_PALETTES;

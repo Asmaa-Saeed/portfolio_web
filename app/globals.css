@@ -1,20 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette from Asmaa's avatar: lavender #b5a2e1, purple #8a63a7,
-     orchid #bc90d1 and deep violet #6a4699, on a dark plum base. */
-  --bg: #0e0a15;
-  --surface: #161021;
-  --surface-2: #1e162c;
-  --line: #2a2039;
-  --line-strong: #3b2d52;
-  --text: #f3eefa;
-  --muted: #b0a5c4;
-  --faint: #8a7f9f;
-  --accent: #7b52b5;
-  --accent-soft: #c2adeb;
-  --accent-deep: #6a4699;
-  --orchid: #bc90d1;
+  --bg: #070912;
+  --surface: #0c0f1e;
+  --surface-2: #111530;
+  --line: #1c2142;
+  --line-strong: #2a2f5a;
+  --text: #eceaf7;
+  --muted: #9b9cb8;
+  --faint: #6d6f8f;
+  --accent: #7c3aed;
+  --accent-soft: #a78bfa;
+  --accent-deep: #6527d6;
 }
 
 @theme inline {
@@ -29,7 +26,6 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-deep: var(--accent-deep);
-  --color-orchid: var(--orchid);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
@@ -77,9 +73,9 @@ html.lenis body {
 /* Soft grain-free glow used behind cards and the CSS orb fallback. */
 .orb-fallback {
   background:
-    radial-gradient(circle at 35% 30%, #e6dcfa 0%, transparent 32%),
-    radial-gradient(circle at 60% 65%, #8a63a7 0%, transparent 55%),
-    radial-gradient(circle at 50% 50%, #3b2457 0%, transparent 70%);
+    radial-gradient(circle at 35% 30%, #c4b5fd 0%, transparent 32%),
+    radial-gradient(circle at 60% 65%, #7c3aed 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, #312e81 0%, transparent 70%);
   filter: blur(18px);
   animation: orb-breathe 8s ease-in-out infinite;
 }

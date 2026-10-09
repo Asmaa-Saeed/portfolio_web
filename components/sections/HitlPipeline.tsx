@@ -67,7 +67,7 @@ export function HitlPipeline() {
               style={{
                 borderColor: "color-mix(in oklab, var(--accent) calc(25% + var(--on) * 60%), transparent)",
                 background: "color-mix(in oklab, var(--accent) calc(8% + var(--on) * 30%), var(--surface))",
-                boxShadow: "0 0 calc(var(--on) * 40px) calc(var(--on) * -6px) rgba(158, 110, 182, 0.7)",
+                boxShadow: "0 0 calc(var(--on) * 40px) calc(var(--on) * -6px) rgba(139, 92, 246, 0.7)",
                 color: "color-mix(in oklab, #ffffff calc(var(--on) * 100%), var(--accent-soft))",
               }}
             >

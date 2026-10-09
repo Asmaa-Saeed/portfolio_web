@@ -68,7 +68,7 @@ export function DemoModal({ project, onClose }: Props) {
 
   return createPortal(
     <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#07050b]/80 p-3 backdrop-blur-md sm:p-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#04050c]/80 p-3 backdrop-blur-md sm:p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -83,7 +83,7 @@ export function DemoModal({ project, onClose }: Props) {
         aria-modal="true"
         aria-labelledby={titleId}
         data-lenis-prevent
-        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-5xl flex-col overflow-y-auto overscroll-contain rounded-2xl border border-line-strong bg-surface shadow-[0_40px_120px_-40px_rgba(106,70,153,0.55)] sm:max-h-[calc(100dvh-3rem)] lg:flex-row lg:overflow-hidden"
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-5xl flex-col overflow-y-auto overscroll-contain rounded-2xl border border-line-strong bg-surface shadow-[0_40px_120px_-40px_rgba(109,63,224,0.55)] sm:max-h-[calc(100dvh-3rem)] lg:flex-row lg:overflow-hidden"
         initial={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.94, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 8 }}
