@@ -63,7 +63,7 @@ export function DashboardVisual() {
             <div
               key={i}
               data-bar
-              className="flex-1 rounded-t-md bg-gradient-to-t from-accent/25 to-accent/60"
+              className="flex-1 rounded-t-md bg-gradient-to-t from-accent/25 to-orchid/60"
               style={{ height: `${h}%` }}
             />
           ))}
@@ -74,7 +74,7 @@ export function DashboardVisual() {
           preserveAspectRatio="none"
           className="absolute inset-0 h-full w-full"
         >
-          <path d={LINE} fill="none" stroke="#e9d5ff" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+          <path d={LINE} fill="none" stroke="#e6dcfa" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
         </svg>
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-line/80 pt-3 text-[11px]">

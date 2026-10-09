@@ -72,16 +72,16 @@ export function ClientsMap() {
         <defs>
           <linearGradient id="arc-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#bc90d1" stopOpacity="0.9" />
           </linearGradient>
           <radialGradient id="pin-glow">
-            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.55" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
+            <stop offset="0%" stopColor="#b5a2e1" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#b5a2e1" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        <path d={base} stroke="#353b6e" strokeWidth="5.5" strokeLinecap="round" />
-        <path data-client-layer d={client} stroke="#9b7bf7" strokeOpacity="0.9" strokeWidth="5.5" strokeLinecap="round" />
+        <path d={base} stroke="#3a2c50" strokeWidth="5.5" strokeLinecap="round" />
+        <path data-client-layer d={client} stroke="#b08ee0" strokeOpacity="0.9" strokeWidth="5.5" strokeLinecap="round" />
 
         {TARGETS.map((m) => {
           const d = arcPath(HOME.x, HOME.y, m.x, m.y);
@@ -103,7 +103,7 @@ export function ClientsMap() {
           return (
             <g key={m.code} data-pin>
               <circle cx={m.x} cy={m.y} r={home ? 34 : 24} fill="url(#pin-glow)" />
-              <circle cx={m.x} cy={m.y} r={home ? 7 : 5.5} fill={home ? "#ffffff" : "#c4b5fd"} stroke="#070912" strokeWidth="2" />
+              <circle cx={m.x} cy={m.y} r={home ? 7 : 5.5} fill={home ? "#ffffff" : "#c2adeb"} stroke="#0e0a15" strokeWidth="2" />
             </g>
           );
         })}

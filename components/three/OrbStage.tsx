@@ -142,7 +142,7 @@ export function OrbStage() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div ref={moverRef} className="absolute inset-0 will-change-transform">
-        <div className="absolute left-1/2 top-1/2 aspect-square w-[min(60vh,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.28)_0%,rgba(109,63,224,0.08)_45%,transparent_70%)]" />
+        <div className="absolute left-1/2 top-1/2 aspect-square w-[min(60vh,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(138,99,167,0.3)_0%,rgba(106,70,153,0.08)_45%,transparent_70%)]" />
         <OrbFallback visible={!ready || failed} />
         {mount && !failed && (
           <OrbCanvas still={reduced} onReady={() => setReady(true)} onFail={() => setFailed(true)} />
